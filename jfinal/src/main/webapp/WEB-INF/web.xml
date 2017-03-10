@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<listener>
+		<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+	</listener>
+	
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>shiro</filter-name>
+		<filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>shiro</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+		<url-pattern>/erp/*</url-pattern>
+		<url-pattern>/upload/*</url-pattern>
+		<url-pattern>/zyk/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+    	<filter-name>weixinFilter</filter-name>
+    	<filter-class>com.xiaoan.wlt.filter.WeixinFilter</filter-class>
+    	<init-param>
+    		<description>ignore url pattern with Regex</description>
+    		<param-name>ignores</param-name>
+    		<param-value>/weixin/article.*</param-value>
+    	</init-param>
+    </filter>
+    <filter-mapping>
+		<filter-name>weixinFilter</filter-name>
+		<url-pattern>/weixin/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>jfinal</filter-name>
+		<filter-class>com.jfinal.core.JFinalFilter</filter-class>
+		<init-param>
+			<param-name>configClass</param-name>
+			<param-value>com.xiaoan.wlt.base.Start</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>jfinal</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+			<taglib-location>/WEB-INF/fmt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
+			<taglib-location>/WEB-INF/fmt-rt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+			<taglib-location>/WEB-INF/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
+			<taglib-location>/WEB-INF/c-rt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+			<taglib-location>/WEB-INF/sql.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
+			<taglib-location>/WEB-INF/sql-rt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+			<taglib-location>/WEB-INF/x.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
+			<taglib-location>/WEB-INF/x-rt.tld</taglib-location>
+		</taglib>
+		<taglib>    
+        <taglib-uri>http://www.xiaoan.com/jsp/jstl/functions</taglib-uri>    
+        	<taglib-location>/WEB-INF/tlds/xf.tld</taglib-location>    
+    	</taglib>
+	</jsp-config>
+</web-app>

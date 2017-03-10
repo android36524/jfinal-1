@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* 
+ *@名称: main.css
+ *@功能: 页面样式
+ *@作者: Sky
+ *@版本: v1.0
+ *@时间: 2015-09-21
+ */
+
+* {
+	margin:0px;
+	padding:0px;
+}
+body {
+	font-family: "Microsoft Yahei",Arial, Verdana, Helvetica, sans-serif;
+	font-size:14px;
+	color:#000;
+	line-height: 1.5em;
+}
+
+
+li {
+	list-style-type: none;
+}
+h1, h2, h3 {
+	font-size: 14px;
+	font-weight: bold;
+}
+em { font-style:normal}
+img { border:none;}
+
+.clear{ clear:both}
+.h_4{ 
+	height:4px;
+	overflow:hidden;
+	}
+.lefts {
+	float:left;
+	text-align: left;
+}
+.rights {
+	float:right;
+	text-align: right;
+}
+a.more,a.more:link ,a.more:visited,a.more:hover{
+	font-size:12px;
+	font-weight:normal;
+	color:#666;
+	text-decoration:none;
+	margin:0;
+}
+
+a {
+	color: #2e2e2e;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration:none;
+	color:#3592e2;
+}
+
+.floatL{ float:left;}
+.floatR{ float:right;}
+.marR26{ margin-right:26px}
+.marT50{ margin-top:50px;}
+.marB50{ margin-bottom:50px;}
+
+.btn{
+  display: inline-block;
+  *display: inline;
+  padding: 4px 12px;
+  margin:2px 0px;
+  *margin-left: .3em;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  border-radius:2px;
+  border:1px solid #ddd;
+  background:#f6f6f6;
+  box-shadow:0px 0px 1px #fff inset;
+  }
+.btn:hover{
+	  background:#3592e2;
+	  color:#fff
+}
+.btn-orange{
+  color: #fff;
+  background:#f6ae01;
+  border:1px solid #eb9500;
+  }
+.btn-orange:hover{
+  color: #fff;
+  background:#eb9500;
+  }
+.btn-blue{
+  color: #fff;
+  background:#3592e2;
+  border:1px solid #3484c9;
+  }
+.btn-blue:hover{
+  color: #fff;
+  background:#3484c9;
+  }
+  
+.btn-small{
+  font-size: 12px;
+  padding: 2px 10px;
+  }
+.btn-big{
+  padding: 5px 30px;
+  }
+  
+.top_box { width:100%;background: url(../images/top_pic.jpg) no-repeat center; height: 23%; padding:0; position:relative }
+.top_box .jb_con{ width:257px;background: url(../images/tip_pic2.jpg) no-repeat center; height: 325px; position:absolute; top:100%; left:822px; text-align:center; }
+.top_box .jb_con p{ font-size:24px; margin-top:300px;}
+.top_box .time_con{ font-size:28px; color:#000; position:absolute; top:10px; right:200px; }
+.top_box .time_con p{ margin:20px 0; line-height:30px;}
+.top_box .time_con b{ background:#fff; color:#e9620b; padding:0 5px;}
+.top_box .time_con span{ color:#fff; padding:2px;}
+
+.main_box{ width:95%; padding:0 45px; margin:0 0px;height: 30%; }
+.main_box .top3_con{ width:760px; float:left; margin-top:10px; height:320px}
+.main_box .top3_con h2{ border-bottom:1px solid #ddd; padding:10px; text-align:center; margin-bottom:5px;}
+.main_box .top3_con li{ float:left; width:120px; height:140px; margin:0px 65px;}
+.main_box .top3_con li h3{ text-align:center}
+.main_box .top3_con li .img_c{ border:1px solid #e29a27; width:120px; height:140px; position:relative; box-shadow:1px 1px 2px #666}
+.main_box .top3_con li .img_c b{ width:41px; height:45px;background: url(../images/img_tag.png); display:block; position:absolute; top:1px; right:1px}
+.main_box .top3_con li .img_c img{ width:120px; height:140px;}
+.main_box .top3_con li .font_c {font-size:14px; line-height:30px; font-weight:bold; text-align:center; margin-top:5px;}
+.main_box .top3_con li .font_c  h4{ border-bottom:1px solid #000; color:#ad905c; font-size:16px; }
+.main_box .top3_con li .font_c  p{color:#cd171e}
+
+.main_box2{ width:97%; padding:0 20px; margin:0 auto;background: url(../images/bg_pic.jpg) no-repeat bottom center;height: 45%; }
+.main_box2 .team_con{ position: relative;float:left; width:410px; margin:0 0 20px 0; margin-right:210px;  margin-left:60px;height: 92%;}
+.main_box2 .team_con h2{ border-bottom:1px solid #ddd; padding:10px; text-align:center; margin-bottom:5px;}
+.main_box2 .team_con .team_c{ padding:0px;}
+.main_box2 .team_con .team_c li{display:block; padding:6px; padding-left:100px; border-bottom:1px solid #ddd}
+.main_box2 .team_con .team_c li img{ margin-right:5px;}
+.main_box2 .team_con .team_c li span{ margin-left:5px;}
+.main_box2 .team_con .team_c .b_font{ color:#cd171e; font-size:16px; font-weight:bold}
+.main_box2 .team_con.no_pad{ float:right;margin-right:60px;;margin-left:0;}
+
+
+.foot_box{ width:1920px; margin:0 auto; height:22px;background: url(../images/foot_bg.jpg) repeat-x; position:fixed; bottom:0px }
+
+
+.scrollDiv{height:30px; line-height:30px;overflow:hidden;background: url(../images/ico_ann.png) no-repeat left center; margin:0;}
+.scrollDiv li{height:30px;padding-left:35px; }
+.scrollDiv li a{ color:#c21215; font-size:16px;position: relative;width: 450px; }
+
+.scrollDiv2{height:79%; line-height:40px;overflow:hidden;}
+.scrollDiv2 li{height:40px;}

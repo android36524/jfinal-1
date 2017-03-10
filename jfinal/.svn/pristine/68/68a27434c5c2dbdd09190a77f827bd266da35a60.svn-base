@@ -1,0 +1,25 @@
+package com.xiaoan.wlt.shiro;
+
+import org.apache.shiro.cache.Cache;
+import org.apache.shiro.cache.CacheException;
+import org.apache.shiro.cache.CacheManager;
+
+import com.jfinal.log.Log;
+
+
+
+/**
+ * 重写shiro 缓存到redis里
+ * @author liangjiahong
+ * @date 2016年10月28日
+ */
+public class ShiroRedisManager implements CacheManager {
+	 private static final Log log = Log.getLog(ShiroRedisManager.class);  
+	
+	@Override
+	public <K, V> Cache<K, V> getCache(String name) throws CacheException {
+		log.info(name);
+        return new ShiroRedisCache<K, V>(name);  
+	}
+
+}

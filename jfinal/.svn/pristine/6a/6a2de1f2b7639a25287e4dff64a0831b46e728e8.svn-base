@@ -1,0 +1,26 @@
+[main]
+sessionIdCookie=org.apache.shiro.web.servlet.SimpleCookie
+
+sessionIdCookie.name=jfinal
+#sessionIdCookie.domain=localhost:8080
+sessionIdCookie.path=/
+sessionIdCookie.maxAge=1800
+sessionIdCookie.httpOnly=true
+
+#realm 
+securityManager = org.apache.shiro.web.mgt.DefaultWebSecurityManager
+myRealm = com.xiaoan.wlt.shiro.MyRealm
+securityManager.realm = $myRealm
+
+#cache 缓存配置
+shiroCacheManager = org.apache.shiro.cache.ehcache.EhCacheManager
+shiroCacheManager.cacheManagerConfigFile = classpath:ehcache-shiro.xml
+securityManager.cacheManager = $shiroCacheManager
+
+#cache 缓存redis
+#shiroRedisManager = com.xiaoan.wlt.shiro.ShiroRedisManager
+#securityManager.cacheManager = $shiroRedisManager
+
+
+
+
